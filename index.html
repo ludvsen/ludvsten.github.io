@@ -1,45 +1,111 @@
-
-<DOCTYPE>html </DOCTYPE>
-<html lang="sv">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <meta charset="utf-8">
+    <title>Mvsearch engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"> </script>
+    <script type="text/javascript" src="css/js/functions.js"></script>
+    <script type="text/javascript" src="css/js/myplugin.js"></script>
+    <script type="text/javascript">
+      (function() {
+      var cx = '010622310709395412037:fgtfxlor9ja'; // Insert your own Custom Search Engine ID here
+      var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+      gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+          '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+      })();
+      
+    </script>
   </head>
-  <body>
-    <div class="header-pos">
-      <header>
-        <div class="logo">
-          <h1>Mkv </h1>
-          <h1>Search</h1>
+  <body onload="checkCookie()">
+    <div class="site-wraper">
+      <!--output:header.html-->
+      <header id="header">
+        <div id="header-pos" class="header-pos">
+          <div class="logo">
+            <h1>MKV</h1>
+            <h3>Search </h3>
+          </div>
+          <nav>
+                  <ul>
+                    <li><a href="soon.html">WebSearch</a></li>
+                    <li><a href="#" class="active">MvSearch</a></li>
+                    <li><a href="soon.html">YT-player</a></li>
+                    <li><a href="about.html">About</a></li>
+                  </ul>
+          </nav>
+          <div class="mobiletoogle"><span>   </span></div>
+          <div class="email-me"><a href="mailto:ludvsten@live.se">+ Email-me</a></div>
         </div>
-        <nav>
-              <ul>
-                <li><a href="wbsearch.html">Wbsearch</a></li>
-                <li><a href="index.html">MvSearch</a></li>
-                <li><a href="ytplayer.html">Ytplayer</a></li>
-                <li><a href="omdb.html">omdb</a></li>
-              </ul>
-        </nav>
-        <nav class="mobile-nav">
-              <ul>
-                <li><a href="wbsearch.html">Wbsearch</a></li>
-                <li><a href="index.html">MvSearch</a></li>
-                <li><a href="ytplayer.html">Ytplayer</a></li>
-                <li><a href="omdb.html">omdb</a></li>
-              </ul>
-        </nav>
-        <div class="mobile-toogle">   </div>
-        <div class="email-me"><a href="mailto:1udvst3n@gmail.com">Email-me+</a></div>
       </header>
+      <div class="mobile-nav">
+              <ul>
+                <li><a href="soon.html">WebSearch</a></li>
+                <li><a href="#" class="active">MvSearch</a></li>
+                <li><a href="soon.html">YT-player</a></li>
+                <li><a href="about.html">About</a></li>
+              </ul>
+      </div>
+      <main>
+        <div class="main-wrap">
+          <section id="inpu" class="inpu">
+            <div class="inpc">
+              <gcse:searchbox></gcse:searchbox>
+            </div>
+          </section>
+          <section class="results">
+            <gcse:searchresults></gcse:searchresults>
+            <div class="footer"><span>MkvSearch Engine &copy; 2016</span></div>
+          </section>
+        </div>
+      </main>
+      <aside>
+        <div class="omdbdata">
+          <div class="mhide"></div>
+          <div class="poster"><img src="" id="poster"></div>
+          <ul class="imdbdata">
+            <li>Title:
+              <div class="title"> </div>
+            </li>
+            <li>Year:
+              <div class="year"></div>
+            </li>
+            <li>Runtime:
+              <div class="runtime"></div>
+            </li>
+          </ul>
+          <ul class="imdbdata2"> 
+            <li>Genre:
+              <div class="genre"></div>
+            </li>
+            <li>Rating:
+              <div class="rating"></div>
+            </li>
+            <li class="plotwrap">
+              <h3>Plot</h3>
+              <div class="plot"></div>
+            </li>
+            <li class="actorswrap">
+              <h3>Actors</h3>
+              <div class="actors">           </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="mobile-top"><a href="#header"></a></div>
+      <div class="settings"></div>
+      <ul class="tchange">
+        <li>
+          <h2>Themes</h2>
+        </li>
+        <li><a href="#" id="tblack">Black Theme</a></li>
+        <li><a href="#" id="twhite" class="active">White Theme</a></li>
+      </ul>
     </div>
-    <main>
-      <section id="inpu"></section>
-      <section id="results"></section>
-      <section id="omdb"></section>
-      <footer></footer>
-    </main>
   </body>
 </html>
